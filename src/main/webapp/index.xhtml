@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:c="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+  <h:head>
+    <title>DataTable Users example</title>
+  </h:head>
+  <h:body>
+
+    <div class="ui-g">
+      <div class="ui-g-12">
+        <h3>User Details</h3>
+        <h:form>
+          <p:dataTable value="#{userController.userList}" var="user" paginator="true" rows="4">
+            <p:column sortBy="#{user.id}" headerText="Id">
+              <h:outputText value="#{user.id}" />
+            </p:column>
+
+            <p:column headerText="Password">
+              <h:outputText value="#{user.password}" />
+            </p:column>
+
+            <p:column sortBy="#{user.salt}" headerText="Salt">
+              <h:outputText value="#{user.salt}" />
+            </p:column>
+
+          </p:dataTable>
+        </h:form>
+      </div>
+    </div>
+
+  </h:body>
+</html>
